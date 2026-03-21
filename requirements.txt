@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-ollama
+langgraph
+pymongo
+chromadb
+openai-whisper
+python-dotenv
+httpx
+python-multipart
+pydantic
+langchain_groq
