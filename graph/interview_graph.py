@@ -13,7 +13,7 @@ class InterviewState(TypedDict):
 
 # 1. initialize - sets up the interview
 def initialize(state: InterviewState) -> InterviewState:
-    with open("G:/PROJECTS/taiyar_mind/prompts/interviewer.txt", "r", encoding="utf-8") as f:
+    with open("prompts/interviewer.txt", "r", encoding="utf-8") as f:
         system_prompt = f.read()
     state["conversation"].append({"role": "system", "content": system_prompt})
     return state
