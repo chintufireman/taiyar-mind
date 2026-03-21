@@ -4,4 +4,7 @@ import os
 
 load_dotenv()
 API_KEY = os.getenv("GROQ_API_KEY")
-llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=API_KEY)
+
+def get_llm():
+    llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=API_KEY)
+    return llm

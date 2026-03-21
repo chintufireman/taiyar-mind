@@ -1,5 +1,5 @@
 from typing import TypedDict, List
-from llm import llm
+from llm import get_llm
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from langgraph.graph import StateGraph, END
 
@@ -21,7 +21,7 @@ def initialize(state: InterviewState) -> InterviewState:
 
 # 2. ask_question - asks next question
 def ask_question(state: InterviewState) -> InterviewState:
-    response = llm.invoke(state["conversation"])
+    response = get_llm().invoke(state["conversation"])
     state["conversation"].append({"role": "assistant", "content": response.content})
     state["current_question"] = response.content
     return state

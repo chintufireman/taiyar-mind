@@ -3,7 +3,7 @@ import uuid
 
 
 from graph.interview_graph import InterviewState, initialize, ask_question, receive_answer
-from llm import llm
+from llm import get_llm
 
 router = APIRouter()
 sessions = {}
@@ -51,5 +51,5 @@ async def interview_result(session_id: str):
         evaluation_prompt += f"Q{i+1}: {qa['question']}\nAnswer: {qa['answer']}\n\n"
     evaluation_prompt += "Give total score out of 10, strengths and weaknesses."
 
-    response = llm.invoke([{"role": "user", "content": evaluation_prompt}])
+    response = get_llm().invoke([{"role": "user", "content": evaluation_prompt}])
     return response
