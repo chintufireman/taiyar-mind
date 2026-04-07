@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Annotated
 
 class QA(BaseModel):
     question: str
@@ -8,4 +8,8 @@ class QA(BaseModel):
 class Session(BaseModel):
     session_id: str
     qa_pairs: List[QA] = []
-    is_complete: bool = False
+
+
+class AnswerRequest(BaseModel):
+    session_id: str
+    answer: str

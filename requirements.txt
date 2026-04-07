@@ -7,3 +7,7 @@ httpx
 python-multipart
 pydantic
 langchain_groq
+openai-whisper
+vosk
+sounddevice
+openai
