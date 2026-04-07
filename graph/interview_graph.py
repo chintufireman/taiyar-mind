@@ -1,7 +1,6 @@
-from typing import TypedDict, List
+from typing import TypedDict
 from llm import get_llm
-from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
-from langgraph.graph import StateGraph, END
+
 
 
 class InterviewState(TypedDict):
